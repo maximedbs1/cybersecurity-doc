@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Cybersecurity Documentation
-author: The Jupyter Book Community
+title: Documentation Cybersécurité
+author: Maxime Dubus
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
