@@ -3,7 +3,9 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Pentest
+    chapters:
+    - file: Pentest/wifihack_aircrack
+    - file: Pentest/directorypath
+
