@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Website Directory Path Attack &#8212; Cybersecurity Documentation</title>
+    <title>Hardware &#8212; Cybersecurity Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Website SQL Injection Attack" href="sqlinjection.html" />
-    <link rel="prev" title="WPA/WPA2 Wifi Password Hack w/ Aircrack-ng" href="wifihack_aircrack.html" />
+    <link rel="next" title="WPA/WPA2 Wifi Password Hack w/ Aircrack-ng" href="../Pentest/wifihack_aircrack.html" />
+    <link rel="prev" title="Offensive Security" href="offensiveSecurity.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,19 +140,19 @@ const thebe_selector_output = ".output, .cell_output"
   Tools &amp; Frameworks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Tools%26Frameworks/defensiveSecurity.html">
+  <a class="reference internal" href="defensiveSecurity.html">
    Defensive Security
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Tools%26Frameworks/offensiveSecurity.html">
+  <a class="reference internal" href="offensiveSecurity.html">
    Offensive Security
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Tools%26Frameworks/hardware.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Hardware
   </a>
  </li>
@@ -162,19 +162,19 @@ const thebe_selector_output = ".output, .cell_output"
   Pentest
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="wifihack_aircrack.html">
+  <a class="reference internal" href="../Pentest/wifihack_aircrack.html">
    WPA/WPA2 Wifi Password Hack w/ Aircrack-ng
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pentest/directorypath.html">
    Website Directory Path Attack
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="sqlinjection.html">
+  <a class="reference internal" href="../Pentest/sqlinjection.html">
    Website SQL Injection Attack
   </a>
  </li>
@@ -268,7 +268,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPentest/directorypath.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTools&Frameworks/hardware.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -296,7 +296,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Pentest/directorypath.md"
+        <a href="../_sources/Tools&Frameworks/hardware.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -333,94 +333,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-how-to-retrieve-hidden-file-ex-etc-passwd">
-   Learn how to retrieve hidden file (ex: etc/passwd) :
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-attack">
-     Simple attack
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-encoding">
-     Adding encoding
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-null-byte">
-     Adding Null Byte
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Website Directory Path Attack</h1>
+                <h1>Hardware</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-how-to-retrieve-hidden-file-ex-etc-passwd">
-   Learn how to retrieve hidden file (ex: etc/passwd) :
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-attack">
-     Simple attack
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-encoding">
-     Adding encoding
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-null-byte">
-     Adding Null Byte
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -428,71 +357,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="website-directory-path-attack">
-<h1>Website Directory Path Attack<a class="headerlink" href="#website-directory-path-attack" title="Permalink to this headline">#</a></h1>
-<p>– Using Burpsuite –</p>
-<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Burp</span> <span class="pre">:</span></code></p>
-<ul class="simple">
-<li><p>“proxy” tab</p></li>
-<li><p>intercept = off</p></li>
-<li><p>HTTP history to view all requests</p></li>
-<li><p>ctrl + r on a request to go to repeater –&gt; modify the request and view response easily</p></li>
-</ul>
-<section id="learn-how-to-retrieve-hidden-file-ex-etc-passwd">
-<h2>Learn how to retrieve hidden file (ex: etc/passwd) :<a class="headerlink" href="#learn-how-to-retrieve-hidden-file-ex-etc-passwd" title="Permalink to this headline">#</a></h2>
-<section id="simple-attack">
-<h3>Simple attack<a class="headerlink" href="#simple-attack" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Find some place in the website were files are being displayed (like images)</p></li>
-<li><p>The URL should look like :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>url.com/image/filename?filename=gift.jpg
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>use it to access other files in the folders :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>url.com/image/filename?filename=../../../etc/passwd
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>other ways to access it (like going to the root)</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>url.com/image/filename?filename=/etc/passwd
-url.com/image/filename?filename=....//....//....//etc/passwd
-</pre></div>
-</div>
-</section>
-<section id="adding-encoding">
-<h3>Adding encoding<a class="headerlink" href="#adding-encoding" title="Permalink to this headline">#</a></h3>
-<p>Some website might reject caracters you are trying to pass to the URL such as the “/”, so we will try to encode those caracters</p>
-<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">Burp</span> <span class="pre">:</span></code></p>
-<ul class="simple">
-<li><p>“Decoder” tab</p></li>
-<li><p>enter any caracter or string such as “../../../”</p></li>
-<li><p>click “encode as URL” to encode it</p></li>
-<li><p>click multiple times on the new tabs fo multiple levels of encoding</p></li>
-</ul>
-<p>adding encoding to the request :</p>
-<ul class="simple">
-<li><p>try to encode to avoid firewall blocking the request containing “../../../”</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>url.com/image/filename?filename=%2e%2e%2f%2e%2e%2f%2e%2e%2f/etc/passwd
-</pre></div>
-</div>
-<p>Trying double encoding might bypass some firewall rules but if it doesn’t work, we don’t bother adding more levels of encoding</p>
-</section>
-<section id="adding-null-byte">
-<h3>Adding Null Byte<a class="headerlink" href="#adding-null-byte" title="Permalink to this headline">#</a></h3>
-<p>Make the website believe you are requesting an image (jpg) file to bypass security rules</p>
-<ul class="simple">
-<li><p>We use a “Null Byte” %00 to mark the end of the string</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>url.com/image/filename?filename=../../../etc/passwd%00.jpg
-</pre></div>
-</div>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="hardware">
+<h1>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -508,7 +374,7 @@ url.com/image/filename?filename=....//....//....//etc/passwd
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Pentest"
+            path: "./Tools&Frameworks"
         },
         predefinedOutput: true
     }
@@ -522,17 +388,17 @@ url.com/image/filename?filename=....//....//....//etc/passwd
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="wifihack_aircrack.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="offensiveSecurity.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">WPA/WPA2 Wifi Password Hack w/ Aircrack-ng</p>
+            <p class="prev-next-title">Offensive Security</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="sqlinjection.html" title="next page">
+    <a class='right-next' id="next-link" href="../Pentest/wifihack_aircrack.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Website SQL Injection Attack</p>
+        <p class="prev-next-title">WPA/WPA2 Wifi Password Hack w/ Aircrack-ng</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
