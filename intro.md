@@ -1,6 +1,6 @@
 # CYBERSECURITY DOCUMENTATION
 
-Arborescence de tutos et doc sur des technos et concepts liés à la cybersécurité
+Tree structure of tutorials and documentation on technologies and concepts related to cybersecurity
 
 ```{tableofcontents}
 

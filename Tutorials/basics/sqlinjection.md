@@ -40,6 +40,3 @@ Ex to retreive username from User table in the category filter :
 ```
 site.com/filter?category=Gift' UNION SELECT username, null FROM Users --
 ```
-
-## SQLmap
-

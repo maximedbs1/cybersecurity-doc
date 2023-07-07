@@ -4,8 +4,36 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Pentest
+  - caption: General Information
     chapters:
-    - file: Pentest/wifihack_aircrack
-    - file: Pentest/directorypath
+    - file: GeneralInformation/domains
+    - file: GeneralInformation/glossary
+    - file: GeneralInformation/concepts
 
+  - caption: Tools & Frameworks
+    chapters:
+    - file: Tools&Frameworks/defensiveSecurity
+    - file: Tools&Frameworks/offensiveSecurity
+    - file: Tools&Frameworks/hardware
+
+  - caption: Cryptography
+    chapters:
+    - file: Cryptography/symmetric
+    - file: Cryptography/asymmetric
+    - file: Cryptography/hash
+
+  - caption: Actors
+    chapters:
+    - file: Actors/publicInstitutions
+    - file: Actors/companies
+    - file: Actors/cybercriminalGroups
+
+  - caption: Tutorials
+    chapters:
+    - file: Tutorials/basics/_intro
+      sections:
+      - file: Tutorials/basics/directorypath
+      - file: Tutorials/basics/sqlinjection
+    - file: Tutorials/advanced/_intro
+      sections:
+      - file: Tutorials/advanced/wifihack_aircrack
