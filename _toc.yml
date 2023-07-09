@@ -9,27 +9,45 @@ parts:
     - file: GeneralInformation/domains
     - file: GeneralInformation/glossary
     - file: GeneralInformation/concepts
+    - file: GeneralInformation/legalFramework
 
   - caption: Tools & Frameworks
     chapters:
     - file: Tools&Frameworks/defensiveSecurity
     - file: Tools&Frameworks/offensiveSecurity
-    - file: Tools&Frameworks/hardware
+    - file: Tools&Frameworks/intelligence
+    - file: Tools&Frameworks/governance
 
   - caption: Cryptography
     chapters:
     - file: Cryptography/symmetric
     - file: Cryptography/asymmetric
     - file: Cryptography/hash
+    - file: Cryptography/standards
+
+  - caption: Network Protocols
+    chapters:
+    - file: Network/securityProtocols
+    - file: Network/basicProtocols
 
   - caption: Actors
     chapters:
     - file: Actors/publicInstitutions
+    - file: Actors/certifications&Methodologies
     - file: Actors/companies
     - file: Actors/cybercriminalGroups
 
+  - caption: Cyber Threat
+    chapters:
+    - file: CyberThreat/cyberattacks
+    - file: CyberThreat/malwares
+    - file: CyberThreat/hardware
+
   - caption: Tutorials
     chapters:
+    - file: Tutorials/usefulResources/_intro
+      sections:
+      - file: Tutorials/usefulResources/cti
     - file: Tutorials/basics/_intro
       sections:
       - file: Tutorials/basics/directorypath
