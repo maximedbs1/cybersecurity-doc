@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Protocoles de sécurité &#8212; Cybersecurity Documentation</title>
+    <title>Attaques en cryptographie &#8212; Cybersecurity Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Protocoles de base" href="basicProtocols.html" />
-    <link rel="prev" title="Normes" href="../Cryptography/standards.html" />
+    <link rel="next" title="Symétrique" href="symmetric.html" />
+    <link rel="prev" title="Governance" href="../Tools%26Frameworks/governance.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,24 +172,29 @@ const thebe_selector_output = ".output, .cell_output"
   Cryptography
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Attaques en cryptographie
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Cryptography/symmetric.html">
+  <a class="reference internal" href="symmetric.html">
    Symétrique
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Cryptography/asymmetric.html">
+  <a class="reference internal" href="asymmetric.html">
    Asymétrique
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Cryptography/hash.html">
+  <a class="reference internal" href="hash.html">
    Fonctions de hachage
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Cryptography/standards.html">
+  <a class="reference internal" href="standards.html">
    Normes
   </a>
  </li>
@@ -199,14 +204,19 @@ const thebe_selector_output = ".output, .cell_output"
   Network Protocols
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Network/osiReminder.html">
+   Rappels OSI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Network/securityProtocols.html">
    Protocoles de sécurité
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="basicProtocols.html">
+  <a class="reference internal" href="../Network/basicProtocols.html">
    Protocoles de base
   </a>
  </li>
@@ -412,7 +422,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNetwork/securityProtocols.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCryptography/attacks.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -440,7 +450,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Network/securityProtocols.md"
+        <a href="../_sources/Cryptography/attacks.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -489,7 +499,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Protocoles de sécurité</h1>
+                <h1>Attaques en cryptographie</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -501,39 +511,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="protocoles-de-securite">
-<h1>Protocoles de sécurité<a class="headerlink" href="#protocoles-de-securite" title="Permalink to this headline">#</a></h1>
-<p><strong>Kerberos</strong> : Créé au MIT, Protocole d’authentification réseau reposant sur un mécanisme à chiffrement symétrique et l’utilisation de tickets (pas de mots de passes en clair pouvant être interceptés). Dialogue sur 88/udp par défaut. Utilisé massivement, notamment par les services Microsoft, il est applicable dans de nombreux procédés d’authentification dont le SSO.</p>
-<p>Fonctionnement :</p>
-<ul class="simple">
-<li><p>Le client C a une clé secrète Kc</p></li>
-<li><p>Le serveur S a une clé secrète Ks</p></li>
-<li><p>Le TGS (Ticket Granting Service) a une clé secrète Ktgs et connaît Ks</p></li>
-<li><p>Le KDC (Key Distribution Center) connaît Kc et Ktgs</p></li>
-</ul>
-<p><img alt="Fonctionnement de Kerberos" src="../_images/Kerberoswork.png" /></p>
-<p>Le client C veut accéder à un service proposé par le serveur S</p>
-<ol class="simple">
-<li><p>C s’authentifie auprès du KDC et lui indique le TGS qui l’intéresse ;</p></li>
-<li><p>Après vérification d’identité, le KDC envoie une clé de session Kc,tgs (pour les communications entre C et TGS) chiffrée par Kc ainsi qu’un ticket Ttgs à C, chiffré par Ktgs ;
-Le client possède alors un ticket Ttgs (qu’il ne peut pas déchiffrer) et une clé Kc,tgs</p></li>
-<li><p>C envoie à TGS son ticket Ttgs ainsi que son identifiant + timestamp chiffré par Kc,tgs ;</p></li>
-<li><p>Le TGS déchiffre le ticket avec sa clé Ktgs, récupère le contenu (dont la clé de session Kc,tgs) et peut déchiffrer l’identifiant de C et authentifier les requêtes ;</p></li>
-<li><p>Le TGS envoie au client un ticket Ts chiffré par Ks et une clé de session Kc,s chiffrée avec Kc,tgs, pour les communications entre C et S ;</p></li>
-<li><p>C envoie à S son ticket Ts et son identifiant chiffré par Kc,s ;</p></li>
-<li><p>S vérifie la validité du ticket (le déchiffre avec sa clé Ks) et peut autoriser l’accès au service.</p></li>
-</ol>
-<p>Le ticket Ttgs détenu par C lui sert de carte d’identité éphérmère (généralement 8 heures de validité) mais si nécessaire, un ticket peut être annulé prématurément.</p>
-<p><a class="reference external" href="https://openclassrooms.com/fr/courses/7723396-assurez-la-securite-de-votre-active-directory-et-de-vos-domaines-windows/7953376-effectuez-un-mouvement-lateral-avec-le-protocole-kerberos">OC - Mouvement latéral avec le protocole Kerberos</a></p>
-<p><strong>LDAP</strong> (Lightweight Directory Access Protocol) : Protocole réseau de communication avec annuaire pour des requêtes, recherches, modifications et autorisations rapides. Les informations y sont stockées sous forme d’une structure arborescente dont les nœuds sont constitués d’attributs associés à des valeurs. Port de transfert non sécurisé 389/tcp-udp, transfert chiffré 636/tcp-udp (LDAPS). Fonctions de structuration d’annuaires, ajout, modification et lecture de données, services d’authentification (via user/passwd, certificats ou jeton Kerberos), recherche sur les données prises en charge. Convient aux applications à très grande échelle pour traiter des millions de demandes. Très utilisé dans AD.</p>
-<p><strong>NTLM</strong> (New Technology LAN Manager) : (Considéré comme obsolète depuis 2010, remplacé par Kerberos) Protocole d’authentification qui était utilisé dans diverses implémentations des protocoles réseau Microsoft comme mécanisme SSO. Mécanisme de stimulation/réponse où le client prouve son identité sans envoyer de mot de passe au serveur.</p>
-<p><strong>TLS</strong> (Transport Layer Security) : Protocole de sécurisation des échanges réseau (couche transport). Successeur de SSL qui est maintenant obsolète. Chiffrement symétrique des flux de données (AES), la clé symétrique étant partagée via un échange asymétrique entre client et serveur (certificat X.509). Utilisé par des protocoles (SMTPS, FTPS…) et des applications (OpenSSL pour HTTPS notamment).</p>
-<p><strong>SSL</strong> (Secure Sockets Layer) : Protocole de sécurisation des échanges réseau aujourd’hui obsolète et remplacé par TLS.</p>
-<p><strong>Ipsec</strong> (Internet Protocol Security) : Protocole de protection des communications privées sur réseaux IP. Permet de crypter, décrypter, signer et vérifier les données. 2 modes de fonctionnement, mode transport (SSH-like) pour cryptage des données du paquet ainsi que hash pour l’intégrité. Mode tunnel (utilisation VPN) pour cryptage de tout le paquet, hash et encapsulation dans un nouveau paquet IP avec nouvelle en-tête (cache l’expéditeur et le destinataire, affiche seulement les IP des routeurs). Combine 3 protocoles, AH (Authentication Header) (51/tcp) pour la signature et donc authentification des paquets. ESP (Encapsulating Security Payload) (50/tcp) pour le chiffrement du paquet et l’ajout d’une nouvelle en-tête en mode tunnel. IKE (Internet Key Exchange) (500/udp) pour l’authentification des 2 routeurs, via certificats ou clé partagée, puis ouverture du tunnel.</p>
-<p><strong>3-D Secure</strong> : Protocole sécurisé de paiement sur internet. Développé par Visa et MasterCard en 1999. Echange de messages XML via connexions SSL pour chiffrement des requêtes et authentification client et serveur via certificats numériques. Lie l’autorisation financière avec l’authentification en ligne. Comporte 3 domaines (3-D) : 1. le commerçant et la banque qui recevra les fonds, 2. la banque qui a délivré la carte de paiement, 3. le système de carte bancaire. Se traduit généralement par la double authentification via SMS.</p>
-<p><strong>SET</strong> (Secure Electronic Transaction) : Protocole de sécurisation des transactions de paiement utilisant la carte bancaire développé en 1996. Élaboré conjointement par Visa, MasterCard et autres acteurs majeurs. Implique 3 parties : client, vendeur et banque du vendeur. Demande des certificats (X.509) aux 3 parties, ceux du client et du vendeurs sont fournis par leurs banques. Le numéro de carte n’est pas connu du vendeur donc pas de stockage. Assure la confidentialité avec DES, l’intégrité avec RSA + SHA-1 et l’authentification (certificats + autorité). Peu adopté sur le marché pour cause de complexité du protocole + logistique de distribution de certificats etc. Plus opérationnel depuis 2000, remplacé par 3-D Secure.</p>
-<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Secure_Electronic_Transaction">SET - Wikipédia</a></p>
-<p><strong>SSH (Secure Shell)</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="attaques-en-cryptographie">
+<h1>Attaques en cryptographie<a class="headerlink" href="#attaques-en-cryptographie" title="Permalink to this headline">#</a></h1>
+<p><strong>Attaque des anniversaires</strong> : Attaque sur des fonctions de hachage, basée sur des notions mathématiques similaires à celles du paradoxe des anniversaires en théorie des probabilités (ex : proba que sur une classe de 30 élèves, 2 d’entre eux aient la même date d’anniversaire (collision), est d’environ 0,70). Le but est de comparer un grand nombre de hash entre eux pour en trouver 2 similaires pour 2 sources différentes, appelé collision. Attaque utilisée pour modifier les communications entre 2 personnes ou encore faire signer de faux documents (prendre un contrat m et un contrat frauduleux m’, on va générer un grand nombre de variations de m et m’ en ajoutant des virgules, double espaces, synonymes, etc. On effectue un hash de toutes ces version jusqu’a trouver un hash similaire pour une version de m et une de m’, de là on peut faire signer le contrat frauduleux m’ au lieu de m).</p>
+<p>Approximation rapide du nombre n de hash nécessaires pour trouver une collision : n ≃ sqrt(2m * p(n))</p>
+<p>ex : algo qui génère des hash de 32 bits (m=2^32) et on veut une proba de collision de 1/1.000.000 (p≃2^20) on a n≃sqrt(2x2^32x2^-20) ≃ 90,5 hash nécessaires (la réponse exacte est 93).</p>
+<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Attaque_des_anniversaires">(Explications détaillées)</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -549,7 +532,7 @@ Le client possède alors un ticket Ttgs (qu’il ne peut pas déchiffrer) et une
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Network"
+            path: "./Cryptography"
         },
         predefinedOutput: true
     }
@@ -563,17 +546,17 @@ Le client possède alors un ticket Ttgs (qu’il ne peut pas déchiffrer) et une
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Cryptography/standards.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Tools%26Frameworks/governance.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Normes</p>
+            <p class="prev-next-title">Governance</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="basicProtocols.html" title="next page">
+    <a class='right-next' id="next-link" href="symmetric.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Protocoles de base</p>
+        <p class="prev-next-title">Symétrique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

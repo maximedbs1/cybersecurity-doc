@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Protocoles de sécurité &#8212; Cybersecurity Documentation</title>
+    <title>Rappels OSI &#8212; Cybersecurity Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Protocoles de base" href="basicProtocols.html" />
+    <link rel="next" title="Protocoles de sécurité" href="securityProtocols.html" />
     <link rel="prev" title="Normes" href="../Cryptography/standards.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -174,6 +174,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Cryptography/attacks.html">
+   Attaques en cryptographie
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Cryptography/symmetric.html">
    Symétrique
   </a>
@@ -202,6 +207,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
+   Rappels OSI
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="securityProtocols.html">
    Protocoles de sécurité
   </a>
  </li>
@@ -412,7 +422,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNetwork/securityProtocols.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNetwork/osiReminder.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -440,7 +450,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Network/securityProtocols.md"
+        <a href="../_sources/Network/osiReminder.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -477,23 +487,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#couches">
+   Couches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quelques-protocoles-associes">
+   Quelques protocoles associés
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Protocoles de sécurité</h1>
+                <h1>Rappels OSI</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#couches">
+   Couches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quelques-protocoles-associes">
+   Quelques protocoles associés
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -501,39 +558,110 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="protocoles-de-securite">
-<h1>Protocoles de sécurité<a class="headerlink" href="#protocoles-de-securite" title="Permalink to this headline">#</a></h1>
-<p><strong>Kerberos</strong> : Créé au MIT, Protocole d’authentification réseau reposant sur un mécanisme à chiffrement symétrique et l’utilisation de tickets (pas de mots de passes en clair pouvant être interceptés). Dialogue sur 88/udp par défaut. Utilisé massivement, notamment par les services Microsoft, il est applicable dans de nombreux procédés d’authentification dont le SSO.</p>
-<p>Fonctionnement :</p>
-<ul class="simple">
-<li><p>Le client C a une clé secrète Kc</p></li>
-<li><p>Le serveur S a une clé secrète Ks</p></li>
-<li><p>Le TGS (Ticket Granting Service) a une clé secrète Ktgs et connaît Ks</p></li>
-<li><p>Le KDC (Key Distribution Center) connaît Kc et Ktgs</p></li>
-</ul>
-<p><img alt="Fonctionnement de Kerberos" src="../_images/Kerberoswork.png" /></p>
-<p>Le client C veut accéder à un service proposé par le serveur S</p>
-<ol class="simple">
-<li><p>C s’authentifie auprès du KDC et lui indique le TGS qui l’intéresse ;</p></li>
-<li><p>Après vérification d’identité, le KDC envoie une clé de session Kc,tgs (pour les communications entre C et TGS) chiffrée par Kc ainsi qu’un ticket Ttgs à C, chiffré par Ktgs ;
-Le client possède alors un ticket Ttgs (qu’il ne peut pas déchiffrer) et une clé Kc,tgs</p></li>
-<li><p>C envoie à TGS son ticket Ttgs ainsi que son identifiant + timestamp chiffré par Kc,tgs ;</p></li>
-<li><p>Le TGS déchiffre le ticket avec sa clé Ktgs, récupère le contenu (dont la clé de session Kc,tgs) et peut déchiffrer l’identifiant de C et authentifier les requêtes ;</p></li>
-<li><p>Le TGS envoie au client un ticket Ts chiffré par Ks et une clé de session Kc,s chiffrée avec Kc,tgs, pour les communications entre C et S ;</p></li>
-<li><p>C envoie à S son ticket Ts et son identifiant chiffré par Kc,s ;</p></li>
-<li><p>S vérifie la validité du ticket (le déchiffre avec sa clé Ks) et peut autoriser l’accès au service.</p></li>
-</ol>
-<p>Le ticket Ttgs détenu par C lui sert de carte d’identité éphérmère (généralement 8 heures de validité) mais si nécessaire, un ticket peut être annulé prématurément.</p>
-<p><a class="reference external" href="https://openclassrooms.com/fr/courses/7723396-assurez-la-securite-de-votre-active-directory-et-de-vos-domaines-windows/7953376-effectuez-un-mouvement-lateral-avec-le-protocole-kerberos">OC - Mouvement latéral avec le protocole Kerberos</a></p>
-<p><strong>LDAP</strong> (Lightweight Directory Access Protocol) : Protocole réseau de communication avec annuaire pour des requêtes, recherches, modifications et autorisations rapides. Les informations y sont stockées sous forme d’une structure arborescente dont les nœuds sont constitués d’attributs associés à des valeurs. Port de transfert non sécurisé 389/tcp-udp, transfert chiffré 636/tcp-udp (LDAPS). Fonctions de structuration d’annuaires, ajout, modification et lecture de données, services d’authentification (via user/passwd, certificats ou jeton Kerberos), recherche sur les données prises en charge. Convient aux applications à très grande échelle pour traiter des millions de demandes. Très utilisé dans AD.</p>
-<p><strong>NTLM</strong> (New Technology LAN Manager) : (Considéré comme obsolète depuis 2010, remplacé par Kerberos) Protocole d’authentification qui était utilisé dans diverses implémentations des protocoles réseau Microsoft comme mécanisme SSO. Mécanisme de stimulation/réponse où le client prouve son identité sans envoyer de mot de passe au serveur.</p>
-<p><strong>TLS</strong> (Transport Layer Security) : Protocole de sécurisation des échanges réseau (couche transport). Successeur de SSL qui est maintenant obsolète. Chiffrement symétrique des flux de données (AES), la clé symétrique étant partagée via un échange asymétrique entre client et serveur (certificat X.509). Utilisé par des protocoles (SMTPS, FTPS…) et des applications (OpenSSL pour HTTPS notamment).</p>
-<p><strong>SSL</strong> (Secure Sockets Layer) : Protocole de sécurisation des échanges réseau aujourd’hui obsolète et remplacé par TLS.</p>
-<p><strong>Ipsec</strong> (Internet Protocol Security) : Protocole de protection des communications privées sur réseaux IP. Permet de crypter, décrypter, signer et vérifier les données. 2 modes de fonctionnement, mode transport (SSH-like) pour cryptage des données du paquet ainsi que hash pour l’intégrité. Mode tunnel (utilisation VPN) pour cryptage de tout le paquet, hash et encapsulation dans un nouveau paquet IP avec nouvelle en-tête (cache l’expéditeur et le destinataire, affiche seulement les IP des routeurs). Combine 3 protocoles, AH (Authentication Header) (51/tcp) pour la signature et donc authentification des paquets. ESP (Encapsulating Security Payload) (50/tcp) pour le chiffrement du paquet et l’ajout d’une nouvelle en-tête en mode tunnel. IKE (Internet Key Exchange) (500/udp) pour l’authentification des 2 routeurs, via certificats ou clé partagée, puis ouverture du tunnel.</p>
-<p><strong>3-D Secure</strong> : Protocole sécurisé de paiement sur internet. Développé par Visa et MasterCard en 1999. Echange de messages XML via connexions SSL pour chiffrement des requêtes et authentification client et serveur via certificats numériques. Lie l’autorisation financière avec l’authentification en ligne. Comporte 3 domaines (3-D) : 1. le commerçant et la banque qui recevra les fonds, 2. la banque qui a délivré la carte de paiement, 3. le système de carte bancaire. Se traduit généralement par la double authentification via SMS.</p>
-<p><strong>SET</strong> (Secure Electronic Transaction) : Protocole de sécurisation des transactions de paiement utilisant la carte bancaire développé en 1996. Élaboré conjointement par Visa, MasterCard et autres acteurs majeurs. Implique 3 parties : client, vendeur et banque du vendeur. Demande des certificats (X.509) aux 3 parties, ceux du client et du vendeurs sont fournis par leurs banques. Le numéro de carte n’est pas connu du vendeur donc pas de stockage. Assure la confidentialité avec DES, l’intégrité avec RSA + SHA-1 et l’authentification (certificats + autorité). Peu adopté sur le marché pour cause de complexité du protocole + logistique de distribution de certificats etc. Plus opérationnel depuis 2000, remplacé par 3-D Secure.</p>
-<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Secure_Electronic_Transaction">SET - Wikipédia</a></p>
-<p><strong>SSH (Secure Shell)</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="rappels-osi">
+<h1>Rappels OSI<a class="headerlink" href="#rappels-osi" title="Permalink to this headline">#</a></h1>
+<section id="couches">
+<h2>Couches<a class="headerlink" href="#couches" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>N°</p></th>
+<th class="head"><p>Nom</p></th>
+<th class="head"><p>Fonctione</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Couches Hautes</p></td>
+<td><p>Donnée</p></td>
+<td><p>7</p></td>
+<td><p>Application</p></td>
+<td><p>Point d’accès aux services réseau (HTTP/HTTPS)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Donnée</p></td>
+<td><p>6</p></td>
+<td><p>Présentation</p></td>
+<td><p>Gère le chiffrement et le déchiffrement des données, convertit les données machine en données explopitables par n’importe quelle autre machine (HTML/XML)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Donnée</p></td>
+<td><p>5</p></td>
+<td><p>Session</p></td>
+<td><p>Communication interhost, gère les sessions entre les différentes applications (Cookies)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Segment / Datagramme</p></td>
+<td><p>4</p></td>
+<td><p>Transport</p></td>
+<td><p>Connexion de bout en bout, connectabilité et contrôle de flux ; notion de port (TCP/UDP)</p></td>
+</tr>
+<tr class="row-even"><td><p>Couches Matérielles</p></td>
+<td><p>Paquet</p></td>
+<td><p>3</p></td>
+<td><p>Réseau</p></td>
+<td><p>Détermine le parcours des données et l’adressage logique (IP)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Trame</p></td>
+<td><p>2</p></td>
+<td><p>Liaison</p></td>
+<td><p>Adressage physique (Ethernet/Adresse MAC)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Bit / Symbole</p></td>
+<td><p>1</p></td>
+<td><p>Physique</p></td>
+<td><p>Transmission des signaux sous forme numérique ou analogique (RJ45, Câbles Cat.5, etc.)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quelques-protocoles-associes">
+<h2>Quelques protocoles associés<a class="headerlink" href="#quelques-protocoles-associes" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>N°</p></th>
+<th class="head"><p>Nom</p></th>
+<th class="head"><p>Protocoles</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Application</p></td>
+<td><p>DHCP – DNS – FTP – HTTP – LDAP – RDP – RPC – SMB – SNMP – SMTP – SSH – Telnet – BitTorrent – VoIP - Web</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Présentation</p></td>
+<td><p>ASCII – CSS – HTML – MIME – SSL – TLS – Unicode – XML - JSON</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Session</p></td>
+<td><p>NetBIOS – RPC - AppleTalk</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Transport</p></td>
+<td><p>TCP – UDP - SPX</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Réseau</p></td>
+<td><p>ARP – ICMP – IP – Ipv4 – Ipv6</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Liaison</p></td>
+<td><p>Ethernet – PPP – ATM - CAN</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Physique</p></td>
+<td><p>ADSL – Bluetooth – USB – WiFi – Câble coaxial – Paire torsadée – ISDN</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -570,10 +698,10 @@ Le client possède alors un ticket Ttgs (qu’il ne peut pas déchiffrer) et une
             <p class="prev-next-title">Normes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="basicProtocols.html" title="next page">
+    <a class='right-next' id="next-link" href="securityProtocols.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Protocoles de base</p>
+        <p class="prev-next-title">Protocoles de sécurité</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
