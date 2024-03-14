@@ -20,6 +20,7 @@ parts:
 
   - caption: Cryptography
     chapters:
+    - file: Cryptography/attacks
     - file: Cryptography/symmetric
     - file: Cryptography/asymmetric
     - file: Cryptography/hash
@@ -27,6 +28,7 @@ parts:
 
   - caption: Network Protocols
     chapters:
+    - file: Network/osiReminder
     - file: Network/securityProtocols
     - file: Network/basicProtocols
 

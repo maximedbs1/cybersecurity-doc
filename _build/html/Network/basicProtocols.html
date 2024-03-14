@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Basic Protocols &#8212; Cybersecurity Documentation</title>
+    <title>Protocoles de base &#8212; Cybersecurity Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Institutions Publiques" href="../Actors/publicInstitutions.html" />
-    <link rel="prev" title="Security Protocols" href="securityProtocols.html" />
+    <link rel="prev" title="Protocoles de sécurité" href="securityProtocols.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -175,22 +175,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Cryptography/symmetric.html">
-   Symmetric
+   Symétrique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Cryptography/asymmetric.html">
-   Asymmetric
+   Asymétrique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Cryptography/hash.html">
-   Hash
+   Fonctions de hachage
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Cryptography/standards.html">
-   Standards
+   Normes
   </a>
  </li>
 </ul>
@@ -202,12 +202,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="securityProtocols.html">
-   Security Protocols
+   Protocoles de sécurité
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Basic Protocols
+   Protocoles de base
   </a>
  </li>
 </ul>
@@ -489,7 +489,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basic Protocols</h1>
+                <h1>Protocoles de base</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -501,8 +501,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="basic-protocols">
-<h1>Basic Protocols<a class="headerlink" href="#basic-protocols" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="protocoles-de-base">
+<h1>Protocoles de base<a class="headerlink" href="#protocoles-de-base" title="Permalink to this headline">#</a></h1>
+<p><strong>NetBIOS</strong> (Network Basic Input Output System) : Architecture réseau pour du transfert de fichier entre machines d’un LAN co-développé par IBM et Sytec vers 1985. Principalement utilisé par Microsoft. Pas un protocole réseau mais un système de nommage et une interface logicielle qui permet d’établir des sessions entre différents ordinateurs d’un réseau (une sorte de DNS mais qui fonctionne sur réseau local). 3 implémentations, la dernière, NBT (NetBIOS over TCP/IP), est la seule encore utilisée. Tend à disparaître car on utilise plus les noms DNS que les noms NetBIOS et le partage de fichiers avec SMB peut à présent se passer de NetBIOS et fonctionner directement au dessus de TCP/IP. Couche 5 (session) du modèle OSI. Utilise 4 ports : 135 Microsoft RPC service de localisation utilisé par les appels de procédure à distance, 137/udp NetBIOS Name Service pour associer un nom d’ordinateur à une adresse IP (nom limité à 15 caractères ASCII + 1 pour le type de machine), 138/udp NetBIOS Datagram Service pour échanger des messages en mode non connecté. 139/tcp NetBIOS Session Service pour échanger des messages en mode connecté.</p>
+<p><img alt="En-tête paquet Netbios" src="../_images/netbiosPacket.png" /></p>
+<p><a class="reference external" href="https://fr.wikipedia.org/wiki/NetBIOS">(NetBIOS — Wikipédia)</a></p>
+<p><a class="reference external" href="https://superuser.com/questions/637696/what-is-netbios-does-windows-need-its-ports-137-and-138-open#:~:text=A%20session%20management%20and%20data%20transport%20protocol%20NetBIOS,transfer.%205%20Protocol%20and%20adapter%20monitoring%20and%20management.">(Explication du fonctionnement général)</a></p>
+<p><strong>SMTP</strong> (Simple Mail Transfer Protocol) : Protocole de communication utilisé pour transférer un courriel vers des serveurs de messagerie électronique. Dialogue sur 25/tcp sans chiffrement et 587/tcp en mode chiffré (TLS). Utilisable en mode CLI avec quelques commandes simples. Implémenté par tous les clients de messagerie en mode logiciel ou web.</p>
+<p><strong>SMB</strong> (Server Message Block) : Protocole de partage de ressources (systèmes de fichiers, répertoires et imprimantes) sur des réseaux locaux avec des machines Windows. Communique sur 445/tcp-udp avec Microsoft Directory Services (DNS), 139/tcp avec NetBIOS. Architecture client/serveur. Les anciennes versions sont toujours utilisées pour des raisons de compatibilité ce qui pose des problèmes de sécurité importants si mauvaise utilisation. Le logiciel libre Samba implémente le protocole SMB sur les systèmes UNIX.</p>
+<p><strong>RPC</strong> (Remote Procedure Call) : Protocle permettant de faire des appels de procédure sur des machines distantes en mode client/server. Communique sur 135/tcp-udp. Couche 5 (session) du modèle OSI. Concerne la communication entre les processus d’un système et les processus de machines distinctes. Utilisé dans les OS actuels pour réaliser des routines. Appliqué plus généralement dans les services web, les applications distribuées dans lesquelles différents ordinateurs partagent les ressources disponibles et les tâches, également dans le cloud computing, les réseaux peer-to-peer et la blockchain.</p>
+<p><img alt="Fonctionnement RPC" src="../_images/RPCwork.png" /></p>
+<p><a class="reference external" href="https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-que-le-remote-procedure-call/">(Plus d’infos)</a></p>
+<p><strong>RDP</strong> (Remote Desktop Protocol) : Protocole principal pour les sessions de bureau à distance (employés qui ont accès à leur ordinateur de bureau depuis une autre machine par exemple). Port 3389/tcp-udp. 2 vulnérabilités principales : ces connexions à distances sont souvent ouvertes à des attaques brute-force ce qui est utile si le mdp est assez faible (utilisateur et/ou entreprise négligeants), accès non restreint au port utilisé par RDP (3389 généralement) qui peut donc être ciblé facilement (on-path attack).</p>
+<p><strong>WinRM</strong> (Windows Remote Management)</p>
+<p><strong>ATM</strong></p>
+<p><strong>ZigBee</strong></p>
+<p><strong>ISDN</strong></p>
+<p><strong>RIP</strong> (Routing Information Protocol)</p>
+<p><strong>SIP</strong> (Session Initiation Protocol)</p>
+<p><strong>IGMP</strong> (Internet Group Management Protocol)</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -536,7 +553,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Security Protocols</p>
+            <p class="prev-next-title">Protocoles de sécurité</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Actors/publicInstitutions.html" title="next page">
