@@ -28,6 +28,10 @@
 
 ## Américain
 
+**CROWDSTRIKE** [(site web)](https://www.crowdstrike.com/en-us/) : Fondée en 2011, entreprise américaine basée à Autin, TX. Compte environ 3000 employés, capitalisée à 25Md$. Commercialise des EDR/XDR/MDR, des outils de sécurisation de cloud et de gestion des données personnelles. Possède une importante division de Threat Intell/Hunting. Impliqué dans les enquêtes sur d’importantes cyberattaques (ex : Sony Pictures en 2014). Lance en 2013 son premier produit : Crowdstrike Falcon, qui évolura pour intégrer petit à petit tous leurs nouveaux outils.
+
+**PALANTIR** [(site web)](https://www.palantir.com/) : Entreprise Américaine fondée en 2003, comptant environ 2000 employés, spécialisée dans l’édition logicielle de traitement de masses de données. Géant dans son secteur, capitalisé à hauteur de 22Md$ en 2022. Commercialise 2 logiciels dédiés à l’ingestion, le traitement et la visualisation de données : Palantir Gotham et Palantir Foundry. Gotham est à destination des organisations gouvernementales, utilisé notamment par des services de renseignement (NSA, CIA, FBI, DGSI) et services de police pour de la collecte et traitement de données et pour soutenir leurs opérations de surveillance. Foundry, lui, se destine aux marchés de la finance, l’assurance, la santé, les transports et les biens de consommation.
+
 **IVANTI** [(site web)](https://www.ivanti.com/fr/)
 
 **GEN DIGITAL** (SYMANTEC/NORTON) [(site web)](https://www.gendigital.com/us/en/)
@@ -37,10 +41,6 @@
 **QUALYS** [(site web)](https://www.qualys.com/)
 
 **FORTINET** [(site web)](https://www.fortinet.com/fr)
-
-**CROWDSTRIKE** [(site web)](https://www.crowdstrike.com/en-us/) : Fondée en 2011, entreprise américaine basée à Autin, TX. Compte environ 3000 employés, capitalisée à 25Md$. Commercialise des EDR/XDR/MDR, des outils de sécurisation de cloud et de gestion des données personnelles. Possède une importante division de Threat Intell/Hunting. Impliqué dans les enquêtes sur d’importantes cyberattaques (ex : Sony Pictures en 2014). Lance en 2013 son premier produit : Crowdstrike Falcon, qui évolura pour intégrer petit à petit tous leurs nouveaux outils.
-
-**PALANTIR** [(site web)](https://www.palantir.com/) : Entreprise Américaine fondée en 2003, comptant environ 2000 employés, spécialisée dans l’édition logicielle de traitement de masses de données. Géant dans son secteur, capitalisé à hauteur de 22Md$ en 2022. Commercialise 2 logiciels dédiés à l’ingestion, le traitement et la visualisation de données : Palantir Gotham et Palantir Foundry. Gotham est à destination des organisations gouvernementales, utilisé notamment par des services de renseignement (NSA, CIA, FBI, DGSI) et services de police pour de la collecte et traitement de données et pour soutenir leurs opérations de surveillance. Foundry, lui, se destine aux marchés de la finance, l’assurance, la santé, les transports et les biens de consommation.
 
 ## Russe
 
