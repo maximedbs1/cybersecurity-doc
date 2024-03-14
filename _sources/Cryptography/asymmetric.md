@@ -1,1 +1,8 @@
-# Asymmetric
+# Asymétrique
+
+**RSA** : Décrit en 1977 par messieurs Rivest, Shamir et Adleman, breveté par le MIT de 1983 à 2000. Clés de toutes tailles, les recommandations demandent une taille de 2048 bits. Créé 2 clés, publique et privée, à partir de n le produit de p et q, 2 nombre entiers de très grande taille (voir détails image). Pour casser RSA il faudrait factoriser n pour retrouver p et q. Les attaques par force brute ont pu factoriser (en 2019) un nombre de 795 bits, sachant que la complexité est exponentielle avec la taille de la clé, les clés recommandées de 2048 bits sont sûres pour un bon moment. D’autres attaques ont été menées notamment sur le temps d’exécution mais elles peuvent être contrées par une modif de l’algorithme qui rajouterait des calculs inutiles aléatoirement à étape du chiffrement/déchiffrement. Encore l’algorithme asymétrique le plus utilisé aujourd’hui notamment dans le commerce électronique, la signature de documents et l’échange de clés symétriques (dans TLS par exemple).
+
+![Fonctionnement RSA](/Resources/Images/RSAwork.png "RSAwork")
+[(Plus d'infos sur RSA)](https://bibmath.net/crypto/index.php?action=affiche&quoi=moderne/rsa)
+
+**DSA** (Digital Signature Algorithm) : Proposé par le NIST en 1991 comme DSS (Digital Signature Standard), adopté en 1994, a fait l’objet de 4 révisions depuis, la dernière datant de 2013. Uniquement norme pour les signatures numériques, dont le fonctionnement est plus avancé qu’une simple utilisation de paire de clés. Clés de toutes tailles. Depuis 2023, son utilisation n’est plus recommandée excepté pour la vérification de documents signés précédemment.
