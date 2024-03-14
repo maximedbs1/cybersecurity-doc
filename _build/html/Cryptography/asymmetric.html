@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Asymmetric &#8212; Cybersecurity Documentation</title>
+    <title>Asymétrique &#8212; Cybersecurity Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hash" href="hash.html" />
-    <link rel="prev" title="Symmetric" href="symmetric.html" />
+    <link rel="next" title="Fonctions de hachage" href="hash.html" />
+    <link rel="prev" title="Symétrique" href="symmetric.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -175,22 +175,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="symmetric.html">
-   Symmetric
+   Symétrique
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Asymmetric
+   Asymétrique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hash.html">
-   Hash
+   Fonctions de hachage
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="standards.html">
-   Standards
+   Normes
   </a>
  </li>
 </ul>
@@ -489,7 +489,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Asymmetric</h1>
+                <h1>Asymétrique</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -501,8 +501,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="asymmetric">
-<h1>Asymmetric<a class="headerlink" href="#asymmetric" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="asymetrique">
+<h1>Asymétrique<a class="headerlink" href="#asymetrique" title="Permalink to this headline">#</a></h1>
+<p><strong>RSA</strong> : Décrit en 1977 par messieurs Rivest, Shamir et Adleman, breveté par le MIT de 1983 à 2000. Clés de toutes tailles, les recommandations demandent une taille de 2048 bits. Créé 2 clés, publique et privée, à partir de n le produit de p et q, 2 nombre entiers de très grande taille (voir détails image). Pour casser RSA il faudrait factoriser n pour retrouver p et q. Les attaques par force brute ont pu factoriser (en 2019) un nombre de 795 bits, sachant que la complexité est exponentielle avec la taille de la clé, les clés recommandées de 2048 bits sont sûres pour un bon moment. D’autres attaques ont été menées notamment sur le temps d’exécution mais elles peuvent être contrées par une modif de l’algorithme qui rajouterait des calculs inutiles aléatoirement à étape du chiffrement/déchiffrement. Encore l’algorithme asymétrique le plus utilisé aujourd’hui notamment dans le commerce électronique, la signature de documents et l’échange de clés symétriques (dans TLS par exemple).</p>
+<p><img alt="Fonctionnement RSA" src="../_images/RSAwork.png" />
+<a class="reference external" href="https://bibmath.net/crypto/index.php?action=affiche&amp;quoi=moderne/rsa">(Plus d’infos sur RSA)</a></p>
+<p><strong>DSA</strong> (Digital Signature Algorithm) : Proposé par le NIST en 1991 comme DSS (Digital Signature Standard), adopté en 1994, a fait l’objet de 4 révisions depuis, la dernière datant de 2013. Uniquement norme pour les signatures numériques, dont le fonctionnement est plus avancé qu’une simple utilisation de paire de clés. Clés de toutes tailles. Depuis 2023, son utilisation n’est plus recommandée excepté pour la vérification de documents signés précédemment.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -536,13 +540,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Symmetric</p>
+            <p class="prev-next-title">Symétrique</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="hash.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hash</p>
+        <p class="prev-next-title">Fonctions de hachage</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

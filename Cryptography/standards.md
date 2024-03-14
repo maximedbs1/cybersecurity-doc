@@ -1,1 +1,5 @@
-# Standards
+# Normes
+
+**X.509** : Norme créée en 1988, spécifiant les formats pour les certificats à clé publique, les listes de révocation de certificat, les attributs de certificats et l’algorithme de validation du chemin de certification (établissement d’un standard). Repose sur le système hiérarchique d’autorités de certification. Peut être utilisé avec S/MIME, TLS/SSL, SET et Ipsec.
+
+**S/MIME** (Secure/Multipurpose Internet Mail Extensions) : Norme de cryptographie et de signature numérique de courriels encapsulés au format MIME (standard de format mail). Assure l’intégrité, l’authentification, la non-répudiation et la confidentialité des données. S’appuie sur les certificats X.509 pour signer et chiffrer les courriels. Chiffrement symétrique (DES, 3DES, RC2 ou AES) pour les messages et une clé publique est utilisée pour l’échange des clés (sym.) et la signature.

@@ -1,1 +1,15 @@
-# Symmetric
+# Symétrique
+
+**AES** (Advanced Encryption Standard) : Développé par Joan Daemen et Vincent Rijmen (Belges) en  2000, également appelé Rijndael. Clé de 128, 192 ou 256 bits, blocs de 128 bits, 10, 12 ou 14 tours suivant la taille de la clé (respectivement). Issu d’un concours du NIST, l’organisme l’adopte en 2001. Approuvé par la NSA. remplace DES. Malgré les recherches, aucune attaque significative n’a pu casser AES à ce jour (des SCA existent mais très spécifiques). Une spécificité est que la clé sert à créer n+1 clés suivant le nombre n de tours. Fonctionnement d’un tour : SubBytes (S-Boxes), ShiftRows, MixColumns, AddRoundKey. Utilisé dans TLS, SSH, Ipsec, Wi-Fi, 4G, Zigbee , BT, etc.
+
+[Review of the Advanced Encryption Standard (nist.gov)](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8319.pdf)
+
+**DES** : Publié par IBM en 1977 (premier standard). Clé de 56 bits, blocs de 64 bits, 16 tours. Aujourd’hui considéré obsolète car cassable systématiquement en un temps raisonnable. Dernière version date de 1999. Aujourd’hui utilisé sous 3DES mais surtout remplacé par AES. Chiffrement itératif par blocs (réseau de Feistel). A été utilisé pour le système de mots de passe UNIX.
+
+**3DES** : Publié par IBM en 1999. Utilise 2 ou 3 clés DES (56 bits), bloc de 64 bits et 3x16 tours DES. Réalise un EDE (DES encryption, DES decryption, DES encryption) en usage standard. Reconnu par le NIST, assez simple à implémenter mais lent et moins performant que AES sorti au même moment. Très peu utilisé mais reconnu comme sûr (les attaques découvertes ne sont en pratique pas réalisables).
+
+**RC2** (Ron’s Code): Chiffrement par bloc developpé par Ronald Rivest en 1987. Utilise des blocs de 64bits avec une clé de taille variable et 18 tours. Évalué par la NSA, autorisé pour l’export après quelques changements en 1989. Détails secrets à la base mais ont fuité en 1996. Vulnérable à une attaque par clé apparentée qui demande 2^34 textes clairs choisis, publié en 1997.
+
+**IDEA** (International Data Encryption Algorithm) : Chiffrement par bloc développé par James Massey en 1991. Pensé comme remplaçant de DES. Utilise des blocs de 64bits, une clé de 128bits et 8,5 tours. Visé par des attaques « meet-in-the-middle » à partir de 2011 pour tenter d’abaisser le niveau de sécurité, aucune vulnérabilité ne menace la sécurité de l’algorithme en pratique. Très résistant mais dépassé en terme de perfomances.
+
+**Blowfish** : Développé par Bruce Schneier (américain) en 1997. Clé de 32 à 448 bits, blocs de 64 bits, 16 tours. Environ 5 fois plus rapide que 3DES. La version 16 tours est entièrement fiable (quelques attaques existent sur les versions inférieures). Chiffrement itératif par blocs (réseau de Feistel). Algorithme public utilisé dans de nombreux logiciels propriétaires et libres (dont GnuPG et OpenSSH).
